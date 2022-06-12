@@ -1,0 +1,36 @@
+.container-title {
+  display: flex;
+  justify-content: end;
+}
+
+.container-grid {
+  border-color: #69f0ae;
+  border-style: solid;
+  border-width: 2px;
+  height: 99%;
+}
+
+.title {
+  display: block;
+  margin-left: 20px;
+  font-size: 18px;
+}
+
+.container-charts {
+  display: flex;
+  min-width: 612px;
+  justify-content: center;
+  height: 75%;
+  align-items: center;
+  min-height: 250px;
+}
+
+::ng-deep {
+  .mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: transparent !important;
+  }
+
+  .mat-form-field-infix {
+    width: 175px !important;
+  }
+}

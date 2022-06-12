@@ -1,0 +1,19 @@
+<div class="container-grid">
+  <div class="container-charts">
+    <ngx-charts-bar-vertical
+      [view]="[3000, 250]"
+      [showXAxisLabel]="true"
+      [showYAxisLabel]="false"
+      [xAxis]="true"
+      [yAxis]="false"
+      [trimXAxisTicks]="false"
+      [results]="graficoDados"
+      [showDataLabel]="false"
+      [noBarWhenZero]="true"
+      [barPadding]="7"
+      style="fill: #FFF"
+    >
+    </ngx-charts-bar-vertical>
+  </div>
+  <label class="title">Qtn. por dia da semana divido por ano e mês</label>
+</div>

@@ -1,0 +1,26 @@
+<div class="container-grid">
+  <div class="container-title">
+    <mat-form-field color="accent" appearance="fill">
+      <mat-label>Escolha o periodo que deseja</mat-label>
+      <mat-date-range-input [rangePicker]="picker" [formGroup]="dateRange">
+        <input (dateChange)="onChangeDt($event)" matStartDate formControlName="start" placeholder="Inicio">
+        <input (dateChange)="onChangeDt($event)" matEndDate formControlName="end" placeholder="Fim">
+      </mat-date-range-input>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field>
+  </div>
+  <div class="container-charts">
+    <ngx-charts-bar-vertical 
+      [view]="[400, 250]"
+      [showXAxisLabel]="true"
+      [showYAxisLabel]="false"
+      [xAxis]="true"
+      [yAxis]="false"
+      [results]="graficoDados"
+      style="fill: #FFF"
+    >
+    </ngx-charts-bar-vertical>
+  </div>
+  <label class="title">Qtn. por dia da semana</label>
+</div>

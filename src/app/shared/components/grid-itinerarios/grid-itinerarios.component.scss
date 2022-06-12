@@ -1,0 +1,70 @@
+.container-grid {
+  border-color: #69f0ae;
+  border-style: solid;
+  border-width: 2px;
+  height: 99%;
+}
+
+.container-title {
+  display: flex;
+  justify-content: end;
+}
+
+.title {
+  display: block;
+  margin-left: 20px;
+  font-size: 18px;
+}
+
+.container-charts {
+  margin-left: 0px;
+  margin-right: 20px;
+  margin-top: 19px;
+  display: flex;
+  height: 87%;
+  align-items: center;
+  min-height: 220px;
+}
+
+table {
+  overflow-x: scroll;
+  overflow-y: scroll;
+  height: 100%;
+  max-height: 320px;
+  display: block;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 8px;
+  cursor: pointer;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #69f0ae;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #69f0ae;
+}
+
+.coluna-horario {
+  padding-left: 15px;
+}
+
+.coluna-rota {
+  word-break:break-all;
+  width: 260px;
+  display: block;
+}

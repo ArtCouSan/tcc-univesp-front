@@ -1,0 +1,11 @@
+<div class="container-grid">
+  <div class="container-charts">
+    <table>
+      <tr *ngFor="let itinerario of listaItinerarios">
+        <td class="coluna-rota" >{{ itinerario.rota }}</td>
+        <td class="coluna-horario" *ngFor="let horario of itinerario.horarios">{{ horario }}</td>
+      </tr>
+    </table>
+  </div>
+  <label class="title">Itinerários</label>
+</div>

@@ -1,0 +1,29 @@
+<div class="container-grid">
+  <div class="container-title">
+    <mat-form-field appearance="fill">
+      <mat-label>Selecione o ano</mat-label>
+      <mat-select (selectionChange)="anoAlterado($event)" name="food">
+        <mat-option *ngFor="let year of years" [value]="year.value">
+          {{ year.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="container-charts">
+    <ngx-charts-bar-vertical
+      style="fill: #FFF"
+      [view]="[5000, 250]"
+      [showXAxisLabel]="true"
+      [showYAxisLabel]="false"
+      [xAxis]="true"
+      [yAxis]="false"
+      [trimXAxisTicks]="false"
+      [results]="graficoDados"
+      [showDataLabel]="false"
+      [noBarWhenZero]="true"
+      [barPadding]="2"
+    >
+    </ngx-charts-bar-vertical>
+  </div>
+  <label class="title">Qtn. por dia durante ano especifico</label>
+</div>

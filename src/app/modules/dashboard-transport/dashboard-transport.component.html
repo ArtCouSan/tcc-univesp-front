@@ -1,0 +1,79 @@
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <p>
+      <mat-slide-toggle (toggleChange)="gridItinerariosChange()"
+        >Itinerários</mat-slide-toggle
+      >
+    </p>
+    <p>
+      <mat-slide-toggle (toggleChange)="gridPorDiaEspecificoChange()"
+        >Qtn. por dia específico</mat-slide-toggle
+      >
+    </p>
+    <p>
+      <mat-slide-toggle (toggleChange)="gridPorDiaDoAnoChange()"
+        >Qtn. por dia durante ano específico</mat-slide-toggle
+      >
+    </p>
+    <p>
+      <mat-slide-toggle (toggleChange)="gridPorDiaDaSemanaChange()"
+        >Qtn. por dia da semana</mat-slide-toggle
+      >
+    </p>
+    <p>
+      <mat-slide-toggle (toggleChange)="gridPorDiaDaSemanaDividoAnoMesChange()"
+        >Qtn. por dia da semana divido por ano e mês</mat-slide-toggle
+      >
+    </p>
+    <p>
+      <mat-slide-toggle (toggleChange)="gridPorMesDividoAnoChange()"
+        >Qtn. por ano e mês</mat-slide-toggle
+      >
+    </p>
+  </mat-drawer>
+  <mat-drawer-content>
+    <mat-toolbar>
+      <button
+        (click)="drawer.toggle()"
+        class="container-button"
+        mat-mini-fab
+        aria-label="Expandir"
+      >
+        <span class="material-symbols-outlined"> library_add </span>
+      </button>
+      <div class="container-texto">
+        <label style="margin-left: 20px; margin-right: 50px"
+          >Ônibus > SP > São Paulo > Linha: 737A-10</label
+        >
+        <label style="margin-right: 50px"
+          >Sentido: Terminal Jardim Ângela - Volta: Terminal Santo Amaro</label
+        >
+      </div>
+      <div class="container-perfil">
+        <button mat-mini-fab aria-label="Perfil">
+          <span class="material-symbols-outlined-perfil"> account_circle </span>
+        </button>
+      </div>
+    </mat-toolbar>
+    <mat-grid-list cols="2" rowHeight="25rem">
+      <mat-grid-tile [rowspan]="1"  *ngIf="gridItinerarios">
+        <app-grid-itinerarios></app-grid-itinerarios>
+      </mat-grid-tile>
+      <mat-grid-tile [rowspan]="1" *ngIf="gridPorDiaEspecifico">
+        <app-grid-por-dia></app-grid-por-dia>
+      </mat-grid-tile>
+      <mat-grid-tile [rowspan]="1"  *ngIf="gridPorDiaDaSemana">
+        <app-grid-por-dia-semana></app-grid-por-dia-semana>
+      </mat-grid-tile>
+      <mat-grid-tile [rowspan]="1"  *ngIf="gridPorDiaDaSemanaDividoAnoMes">
+        <app-grid-por-dia-semana-divido-ano-mes></app-grid-por-dia-semana-divido-ano-mes>
+      </mat-grid-tile>
+      <mat-grid-tile [rowspan]="1"  *ngIf="gridPorMesDividoAno">
+        <app-grid-por-mes-divido-por-ano></app-grid-por-mes-divido-por-ano>
+      </mat-grid-tile>
+      <mat-grid-tile [rowspan]="1"  *ngIf="gridPorDiaDoAno">
+        <app-grid-por-dia-no-ano></app-grid-por-dia-no-ano>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-drawer-content>
+</mat-drawer-container>
