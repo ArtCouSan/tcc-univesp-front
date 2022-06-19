@@ -3,24 +3,38 @@
     <mat-form-field color="accent" appearance="fill">
       <mat-label>Escolha o periodo que deseja</mat-label>
       <mat-date-range-input [rangePicker]="picker" [formGroup]="dateRange">
-        <input (dateChange)="onChangeDt($event)" matStartDate formControlName="start" placeholder="Inicio">
-        <input (dateChange)="onChangeDt($event)" matEndDate formControlName="end" placeholder="Fim">
+        <input
+          (dateChange)="onChangeDt($event)"
+          matStartDate
+          formControlName="start"
+          placeholder="Inicio"
+        />
+        <input
+          (dateChange)="onChangeDt($event)"
+          matEndDate
+          formControlName="end"
+          placeholder="Fim"
+        />
       </mat-date-range-input>
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-date-range-picker #picker></mat-date-range-picker>
     </mat-form-field>
   </div>
   <div class="container-charts">
-    <ngx-charts-bar-vertical 
-      [view]="[400, 250]"
+    <ngx-charts-bar-vertical
+      style="fill: #fff"
+      [view]="[6000, 250]"
       [showXAxisLabel]="true"
       [showYAxisLabel]="false"
       [xAxis]="true"
       [yAxis]="false"
+      [trimXAxisTicks]="false"
       [results]="graficoDados"
-      style="fill: #FFF"
+      [showDataLabel]="false"
+      [noBarWhenZero]="true"
+      [barPadding]="2"
     >
     </ngx-charts-bar-vertical>
   </div>
-  <label class="title">Quantas vezes o limite foi atigindo por dia da semana</label>
+  <label class="title">Quantas vezes o limite foi atigindo por horário</label>
 </div>

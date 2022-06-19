@@ -2,32 +2,42 @@
   <mat-drawer #drawer class="example-sidenav" mode="side">
     <p>
       <mat-slide-toggle (toggleChange)="gridItinerariosChange()"
-        >Itinerários</mat-slide-toggle
+        >Itinerários da linha</mat-slide-toggle
+      >
+    </p>
+    <p>
+      <mat-slide-toggle (toggleChange)="gridPorItinerarioChange()"
+        >Quantas vezes o limite foi atigindo por Itinerário</mat-slide-toggle
+      >
+    </p>
+    <p>
+      <mat-slide-toggle (toggleChange)="gridPorHorarioChange()"
+        >Quantas vezes o limite foi atigindo por horário</mat-slide-toggle
       >
     </p>
     <p>
       <mat-slide-toggle (toggleChange)="gridPorDiaEspecificoChange()"
-        >Qtn. por dia específico</mat-slide-toggle
+        >Quantas vezes o limite foi atigindo por dia específico</mat-slide-toggle
       >
     </p>
     <p>
       <mat-slide-toggle (toggleChange)="gridPorDiaDoAnoChange()"
-        >Qtn. por dia durante ano específico</mat-slide-toggle
+        >Quantas vezes o limite foi atigindo por dia durante ano específico</mat-slide-toggle
       >
     </p>
     <p>
       <mat-slide-toggle (toggleChange)="gridPorDiaDaSemanaChange()"
-        >Qtn. por dia da semana</mat-slide-toggle
+        >Quantas vezes o limite foi atigindo por dia da semana</mat-slide-toggle
       >
     </p>
     <p>
       <mat-slide-toggle (toggleChange)="gridPorDiaDaSemanaDividoAnoMesChange()"
-        >Qtn. por dia da semana divido por ano e mês</mat-slide-toggle
+        >Quantas vezes o limite foi atigindo por dia da semana divido por ano e mês</mat-slide-toggle
       >
     </p>
     <p>
       <mat-slide-toggle (toggleChange)="gridPorMesDividoAnoChange()"
-        >Qtn. por ano e mês</mat-slide-toggle
+        >Quantas vezes o limite foi atigindo por ano e mês</mat-slide-toggle
       >
     </p>
   </mat-drawer>
@@ -58,6 +68,12 @@
     <mat-grid-list cols="2" rowHeight="25rem">
       <mat-grid-tile [rowspan]="1"  *ngIf="gridItinerarios">
         <app-grid-itinerarios></app-grid-itinerarios>
+      </mat-grid-tile>
+      <mat-grid-tile [rowspan]="1" *ngIf="gridPorItinerario">
+        <app-grid-por-itinerario></app-grid-por-itinerario>
+      </mat-grid-tile>
+      <mat-grid-tile [rowspan]="1" *ngIf="gridPorHorario">
+        <app-grid-por-horario></app-grid-por-horario>
       </mat-grid-tile>
       <mat-grid-tile [rowspan]="1" *ngIf="gridPorDiaEspecifico">
         <app-grid-por-dia></app-grid-por-dia>

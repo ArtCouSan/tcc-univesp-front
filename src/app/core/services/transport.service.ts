@@ -5,6 +5,8 @@ import { Itinerary } from '../models/Itinerary';
 import { PerDayInYear } from '../models/PerDayInYear';
 import { PerDayWeek } from '../models/PerDayWeek';
 import { PerDayWeekByMonthAndYear } from '../models/PerDayWeekByMonthAndYear';
+import { PerHour } from '../models/PerHours';
+import { PerItinerary } from '../models/PerItinerary';
 import { PerMonthByYear } from '../models/PerMonthByYear';
 
 const URL_ENDPOINT = "http://localhost:8080/transport/737A-10";
@@ -13,6 +15,14 @@ const URL_ENDPOINT = "http://localhost:8080/transport/737A-10";
 export class TransportService {
 
   constructor(private http: HttpClient) { }
+
+  listarPorItinerario(dtBegin: any, dtEnd: any): Observable<Array<PerItinerary>> {
+    return this.http.get<Array<PerItinerary>>(`${URL_ENDPOINT}/listar-por-itinerario?dtBegin=${dtBegin}&dtEnd=${dtEnd}`);
+  }
+
+  listarPorHorario(dtBegin: any, dtEnd: any): Observable<Array<PerHour>> {
+    return this.http.get<Array<PerHour>>(`${URL_ENDPOINT}/listar-por-itinerario-horario?dtBegin=${dtBegin}&dtEnd=${dtEnd}`);
+  }
 
   listarItinerarios(): Observable<Array<Itinerary>> {
     return this.http.get<Array<Itinerary>>(URL_ENDPOINT + "/listar-itinerarios");

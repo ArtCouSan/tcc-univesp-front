@@ -9,11 +9,11 @@ interface Grafico {
 }
 
 @Component({
-  selector: 'app-grid-por-dia-semana',
-  templateUrl: './grid-por-dia-semana.component.html',
-  styleUrls: ['./grid-por-dia-semana.component.scss']
+  selector: 'app-grid-por-horario',
+  templateUrl: './grid-por-horario.component.html',
+  styleUrls: ['./grid-por-horario.component.scss']
 })
-export class GridPorDiaSemanaComponent implements OnInit {
+export class GridPorHorarioComponent implements OnInit {
 
   constructor(private transportService: TransportService, private datePipe: DatePipe) { }
 
@@ -32,11 +32,11 @@ export class GridPorDiaSemanaComponent implements OnInit {
 
     if (dtBegin && dtEnd) {
       let graficoDadosTemp: Array<Grafico> = [];
-      this.transportService.listarPorDiaDaSemana(dtBegin, dtEnd).subscribe(listaDia => {
-        listaDia.forEach(dia => {
+      this.transportService.listarPorHorario(dtBegin, dtEnd).subscribe(listaPorHorario => {
+        listaPorHorario.forEach(horario => {
           graficoDadosTemp.push({
-            name: this.getDayWeek(dia.nameDayWeek),
-            value: dia.qtn
+            name: horario.horario,
+            value: horario.qtn
           })
         });
         this.graficoDados = [...graficoDadosTemp];
@@ -44,24 +44,4 @@ export class GridPorDiaSemanaComponent implements OnInit {
     }
   }
 
-  getDayWeek(dayWeek: string) {
-    switch (dayWeek) {
-      case "1":
-        return "Segunda"
-      case "2":
-        return "Terça";
-      case "3":
-        return "Quarta";
-      case "4":
-        return "Quinta";
-      case "5":
-        return "Sexta";
-      case "6":
-        return "Sábado";
-      case "7":
-        return "Domingo";
-      default:
-        return ""
-    }
-  }
 }

@@ -27,6 +27,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { GridItinerariosComponent } from './shared/components/grid-itinerarios/grid-itinerarios.component';
+import { GridPorItinerarioComponent } from './shared/components/grid-por-itinerario/grid-por-itinerario.component';
+import { GridPorHorarioComponent } from './shared/components/grid-por-horario/grid-por-horario.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { GridItinerariosComponent } from './shared/components/grid-itinerarios/g
     GridPorDiaSemanaComponent,
     GridPorDiaSemanaDividoAnoMesComponent,
     GridPorMesDividoPorAnoComponent,
-    GridItinerariosComponent
+    GridItinerariosComponent,
+    GridPorItinerarioComponent,
+    GridPorHorarioComponent
   ],
   imports: [
     BrowserModule,

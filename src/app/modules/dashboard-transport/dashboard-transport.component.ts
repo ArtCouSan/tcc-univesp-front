@@ -17,6 +17,8 @@ export class DashboardTransportComponent implements OnInit {
   gridPorDiaDaSemanaDividoAnoMes = false;
   gridPorMesDividoAno= false;
   gridItinerarios = false;
+  gridPorItinerario = false;
+  gridPorHorario = false;
 
   showFiller = false;
 
@@ -25,6 +27,14 @@ export class DashboardTransportComponent implements OnInit {
 
   public gridItinerariosChange() {
     this.gridItinerarios = !this.gridItinerarios;
+  }
+
+  public gridPorItinerarioChange() {
+    this.gridPorItinerario = !this.gridPorItinerario;
+  }
+
+  public gridPorHorarioChange() {
+    this.gridPorHorario = !this.gridPorHorario;
   }
 
   public gridPorDiaEspecificoChange() {
